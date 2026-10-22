@@ -1,0 +1,15 @@
+1) Add this import alongside your existing imports in app/page.tsx:
+
+import BirthdayComments from "@/components/BirthdayComments";
+
+If your project does not have the `@/` alias configured, use a relative import such as `../components/BirthdayComments` according to your folder structure.
+
+2) In the existing return JSX, find the block that starts with:
+
+{entered && <>
+
+Inside that block, place this component after the closing `</section>` for `letter-section` (the section with id="letter") and before `<section className="final-scene ..."`:
+
+<BirthdayComments />
+
+Do not place it outside `{entered && <> ... </>}`; that keeps the section hidden until the visitor enters the universe. Do not replace or remove the existing finale, footer, music player, or letter modal.

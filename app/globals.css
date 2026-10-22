@@ -707,3 +707,38 @@ main{position:relative;isolation:isolate;min-height:100vh}.ambient{position:fixe
     transition: none;
   }
 }
+.messages-section {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.messages-section form {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.messages-section input,
+.messages-section textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  font: inherit;
+}
+
+.messages-section textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.messages-section button {
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}

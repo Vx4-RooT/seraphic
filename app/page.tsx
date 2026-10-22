@@ -1,6 +1,6 @@
 
 "use client";
-
+import BirthdayMessages from "../components/BirthdayMessages";
 import { useRef, useState } from "react";
 import {
   AnimatePresence,
@@ -919,6 +919,7 @@ export default function Home() {
               )}
             </motion.div>
           </section>
+{/* Public Birthday Messages */}
 
           <footer className="footer">
             <a
@@ -1007,7 +1008,7 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
+<BirthdayMessages />
       <div className="corner-note">
         <Moon size={12} /> MADE OF STARDUST & SMALL DETAILS
       </div>
