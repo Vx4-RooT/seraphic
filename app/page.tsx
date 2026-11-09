@@ -2,6 +2,7 @@
 "use client";
 import BirthdayMessages from "../components/BirthdayMessages";
 import { useRef, useState } from "react";
+import VoiceVerification from "../components/VoiceVerification";
 import {
   AnimatePresence,
   motion,
@@ -246,7 +247,7 @@ export default function Home() {
   const [playing, setPlaying] = useState(false);
   const [musicMissing, setMusicMissing] = useState(false);
   const [secretFound, setSecretFound] = useState(false);
-
+  const [voiceVerified, setVoiceVerified] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
@@ -294,6 +295,17 @@ export default function Home() {
     document
       .getElementById(id)
       ?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+      // Show nothing from the birthday website until verification succeeds.
+if (!voiceVerified) {
+  return (
+    <VoiceVerification
+      onVerified={() => {
+        setVoiceVerified(true);
+        setAnswerGate(false);
+      }}
+    />
+  );
+}
 
   return (
     <main>
